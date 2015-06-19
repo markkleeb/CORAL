@@ -66,5 +66,8 @@ void loop()
   // only send once per successful change
   if (received)
     old_level = level;
+    
+  //send message every 100 ms  
+  delay(100);
 
 }  // end of loop

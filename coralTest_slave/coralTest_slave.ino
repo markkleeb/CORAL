@@ -46,6 +46,7 @@ void loop()
   
   byte received = recvMsg (fAvailable, fRead, buf, sizeof (buf));
   //Serial.println(buf[2]);
+  
   if (received)
     {
     if (buf [0] != 1)
@@ -63,11 +64,8 @@ void loop()
     digitalWrite (ENABLE_PIN, HIGH);  // enable sending
     sendMsg (fWrite, msg, sizeof msg);
     digitalWrite (ENABLE_PIN, LOW);  // disable sending
-    
  
-       theaterChase(strip.Color(buf[2]/2, 0, 127), 50); // White
-    
- 
+    theaterChase(strip.Color(buf[2]/2, 0, 127), 50); // White
     
    // analogWrite (11, buf [2]);  // set light level
    }  // end if something received
@@ -109,6 +107,8 @@ void rainbowCycle(uint8_t wait) {
   }
 }
 
+
+//***********NOT BEING USED***************************************************
 //Theatre-style crawling lights.
 void theaterChase(uint32_t c, uint8_t wait) {
   for (int j=0; j<10; j++) {  //do 10 cycles of chasing
