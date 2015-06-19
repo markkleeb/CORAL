@@ -73,6 +73,8 @@ void loop()
 }  // end of loop
 
 
+//***********NOT BEING USED***************************************************
+
 // Fill the dots one after the other with a color
 void colorWipe(uint32_t c, uint8_t wait) {
   for(uint16_t i=0; i<strip.numPixels(); i++) {
@@ -94,6 +96,8 @@ void rainbow(uint8_t wait) {
   }
 }
 
+
+
 // Slightly different, this makes the rainbow equally distributed throughout
 void rainbowCycle(uint8_t wait) {
   uint16_t i, j;
@@ -108,7 +112,6 @@ void rainbowCycle(uint8_t wait) {
 }
 
 
-//***********NOT BEING USED***************************************************
 //Theatre-style crawling lights.
 void theaterChase(uint32_t c, uint8_t wait) {
   for (int j=0; j<10; j++) {  //do 10 cycles of chasing

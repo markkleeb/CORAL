@@ -26,9 +26,12 @@ void setup() {
 float s1 = 0;
 float s2 = 0;
 float s3 = 0;
-float speed = 1;
+float sinSpeed = 1;
 
 void loop() {
+  
+  sinSpeed = analogRead(0)/4 -127; //0-1023
+  sinSpeed /= 10;
   
   for(uint16_t i=0; i<strip.numPixels(); i++) {
     int r = abs(round(60 * sin(s1*i/np)));
@@ -36,9 +39,11 @@ void loop() {
     int b = abs(round(201 * sin(.2+s3*i/np)));
     strip.setPixelColor(i,r,g,b);
   }
-  s1+= .02;
-  s2+= .03;
-  s3+= .04;
+  
+  s1+= .02 * sinSpeed;
+  s2+= .03 * sinSpeed;
+  s3+= .04 * sinSpeed;
+  
   delay(0);
   strip.show();
 
