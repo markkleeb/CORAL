@@ -28,6 +28,7 @@ int fRead ()
 
 void setup()
 {
+//  Serial.begin(9600);
   rs485.begin (28800);
   pinMode (ENABLE_PIN, OUTPUT);  // driver output enable
   pinMode (LED_PIN, OUTPUT);  // built-in LED
@@ -69,5 +70,7 @@ void loop()
     
   //send message every 100 ms  
   delay(100);
+  
+ // Serial.println(analogRead(0));
 
 }  // end of loop
